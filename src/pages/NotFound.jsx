@@ -1,7 +1,5 @@
 // create a component called Home
 
-import React from "react";
-
 const NotFound = () => {
   return (
     <div>
