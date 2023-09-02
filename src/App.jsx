@@ -2,8 +2,9 @@ import "./App.css";
 import Home from "./pages/Home";
 
 import { Route, Router, Routes } from "react-router-dom";
-import { useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { createBrowserHistory } from "history";
+import NotFound from "./pages/NotFound";
 // create an App component with a react-router-dom Switch
 
 export default function App() {
@@ -17,14 +18,10 @@ export default function App() {
 
   return (
     <div className="App">
-      <Router
-        location={state.location}
-        navigationType={state.action}
-        navigator={history}
-      >
+      <Router location={state.location} navigationType={state.action} navigator={history}>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route default element={() => <h1>404</h1>} />
+          <Route path={"*"} element={<NotFound />} />
         </Routes>
       </Router>
     </div>
