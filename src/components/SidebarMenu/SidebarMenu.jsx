@@ -1,16 +1,17 @@
 import { Menu } from "antd";
 import React from "react";
 import { CloudServerOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 const menuItems = [
   {
     key: "main",
-    label: "Configurator",
+    label: <Link to={"/arrs"}>Arrs</Link>,
     icon: React.createElement(CloudServerOutlined),
     children: [
       {
-        key: "conf-arrs",
-        label: "Arrs",
+        key: "setup",
+        label: <Link to={"/arrs/setup"}>Setup</Link>,
       },
     ],
   },

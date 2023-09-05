@@ -14,6 +14,7 @@ const Layout = (props) => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+  const thisYear = new Date().getFullYear();
   return (
     <AntLayout>
       <Header style={{ display: "flex", alignItems: "center" }}>
@@ -41,7 +42,11 @@ const Layout = (props) => {
         </AntLayout>
       </Content>
       <Footer style={{ textAlign: "center" }}>
-        Ant Design ©2023 Created by Ant UED
+        Unraid Configurator ©{thisYear} Created by{" "}
+        <a href={"https://github.com/marcatos"} target={"_blank"}>
+          Marcatos
+        </a>{" "}
+        for Unraiders
       </Footer>
     </AntLayout>
   );

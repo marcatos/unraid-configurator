@@ -6,11 +6,10 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import { useLayoutEffect, useState } from "react";
 import { createBrowserHistory } from "history";
+import Arrs from "./pages/Arrs";
 
-export default function Router(props) {
+export default function Router() {
   const history = createBrowserHistory();
-
-  const { children } = props;
 
   const [state, setState] = useState({
     action: history.action,
@@ -25,7 +24,11 @@ export default function Router(props) {
       navigator={history}
     >
       <Routes>
-        <Route exact path="/" element={<Home>{children}</Home>} />
+        <Route index element={<Home />} />
+        <Route path={"arrs"}>
+          <Route index element={<Arrs>arrs</Arrs>} />
+          <Route path="setup" element={<Arrs>setup</Arrs>} />
+        </Route>
         <Route path={"*"} element={<NotFound />} />
       </Routes>
     </ReactRouter>
