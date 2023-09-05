@@ -1,13 +1,9 @@
-import { /*Breadcrumb,*/ Menu, theme, Layout as AntLayout } from "antd";
+import { /*Breadcrumb,*/ theme, Layout as AntLayout } from "antd";
 import React from "react";
 import SidebarMenu from "./components/SidebarMenu/SidebarMenu";
+import MainMenu from "./components/MainMenu";
 
 const { Header, Content, Footer, Sider } = AntLayout;
-
-const items1 = ["1", "2", "3"].map((key) => ({
-  key,
-  label: `nav ${key}`,
-}));
 
 const Layout = (props) => {
   const { children } = props;
@@ -19,12 +15,7 @@ const Layout = (props) => {
     <AntLayout>
       <Header style={{ display: "flex", alignItems: "center" }}>
         <div className="demo-logo" />
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={["2"]}
-          items={items1}
-        />
+        <MainMenu />
       </Header>
       <Content style={{ padding: "0 50px" }}>
         {/*<Breadcrumb style={{ margin: "16px 0" }}>*/}
